@@ -1,0 +1,31 @@
+{
+  "name": "appetizer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-app": "browserify index.js > www/index.js && cordova prepare",
+    "build": "browserify index.js > www/index.js",
+    "dev": "budo index.js --live -d www/",
+    "android": "npm run build && cordova run android",
+    "android-release": "npm run build && cordova build --release android && mv platforms/android/build/outputs/apk/android-release-unsigned.apk SpotApp.apk && jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore spotapp-release-key.keystore SpotApp.apk spotapp && ./zipalign -v 4 SpotApp.apk SpotApp.apk.aligned && cp SpotApp.apk.aligned SpotApp.apk"
+  },
+  "standard": {
+    "ignore": [
+      "/plugins/",
+      "/resources",
+      "/www/index.js",
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "array.prototype.find": "^1.0.0",
+    "fastclick": "^1.0.3",
+    "mithril": "^0.2.5",
+  },
+  "devDependencies": {
+    "standard": "^6.0.7"
+  }
+}

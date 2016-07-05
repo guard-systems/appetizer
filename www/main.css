@@ -1,0 +1,42 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-overflow-scrolling: touch;
+}
+
+input, select {
+  -webkit-user-select: auto !important;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    text-size-adjust: none;
+    background-color: #EFEFEF;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    overflow: hidden;
+}
+
+body,ul,li {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  color: #005B91;
+}
+
+h1, h2, h3 {
+  font-family: 'GuardSans', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
