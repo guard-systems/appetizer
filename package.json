@@ -15,7 +15,7 @@
     "ignore": [
       "/plugins/",
       "/resources",
-      "/www/index.js",
+      "/www/index.js"
     ]
   },
   "author": "",
@@ -23,7 +23,7 @@
   "dependencies": {
     "array.prototype.find": "^1.0.0",
     "fastclick": "^1.0.3",
-    "mithril": "^0.2.5",
+    "mithril": "^0.2.5"
   },
   "devDependencies": {
     "standard": "^6.0.7"

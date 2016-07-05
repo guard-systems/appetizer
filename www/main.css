@@ -15,12 +15,12 @@ html, body {
 }
 
 body {
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    text-size-adjust: none;
-    background-color: #EFEFEF;
-    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 10px;
-    overflow: hidden;
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  text-size-adjust: none;
+  background-color: #EFEFEF;
+  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  overflow: hidden;
 }
 
 body,ul,li {
@@ -39,4 +39,157 @@ a {
 
 h1, h2, h3 {
   font-family: 'GuardSans', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+
+#view {
+  height: 100%;
+  width: 100%;
+}
+
+#header {
+  color: #fefefe;
+  background-color: #005B91;
+  padding: 18px 4px 6px 4px;
+  height: 70px;
+  box-shadow: 0px 0px 4px #888888;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#content {
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+#header .text {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 50%;
+  height: 40px;
+  line-height:40px;
+  font-size: 2.08em;
+  font-family: 'GuardSans','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-align:center;
+  display: inline-block;
+  vertical-align: top;
+  position:absolute;
+}
+
+#header .button {
+  font-size: 1.6em;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#header .button .active {
+  color: #A3DBE8;
+}
+
+#header .button:hover,
+#header .button .active:hover {
+  color: #A3DBE8;
+}
+
+#header .button:active,
+#header .button .active:active {
+  color: #72C7E7;
+}
+
+input, select {
+  font-size: 1.6em;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  width: 70%;
+  height: 45px;
+  border:solid 1px lightgrey;
+  border-radius: 5px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  -webkit-user-select: auto !important;
+}
+
+input:focus, select:focus {
+  border:solid 1px #A4CAFF;
+  background-color: #F5F9ff;
+  outline: none;
+}
+
+input:disabled {
+  background-color: #e2e2e2;
+  color: #b2b2b2;
+}
+
+button {
+  font-size: 1.6em;
+  background-color: #1A6B5F;
+  transition: background-color 200ms;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  width: 70%;
+  height: 45px;
+  border:solid 1px lightgrey;
+  border-radius: 5px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #1D786A;
+}
+
+button:active {
+  background-color: #175E54;
+}
+
+.scroller {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 60px;
+  overflow-y: scroll;
+}
+
+.scroller ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.scroller li {
+  border-bottom: 1px solid #ccc;
+  background-color: #fefefe;
+  transition: background-color 200ms;
+  padding:10px;
+  overflow: hidden;
+}
+
+.scroller li:hover {
+  background-color: #F0F0F0;
+}
+
+.scroller li:active {
+  background-color: #E6E6E6;
+}
+
+.scroller li.selected {
+  background-color: #EFEFEF;
 }
