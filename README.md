@@ -1,7 +1,7 @@
 # Appetizer app starter
 
 ### Clone
-    git clone git@github.com:guard-systems/appitizer.git
+    git clone git@github.com:guard-systems/appetizer.git
 
 ### Install
     npm install -g cordova
