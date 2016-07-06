@@ -1,4 +1,4 @@
-# Appitizer app starter
+# Appetizer app starter
 
 ### Clone
     git clone git@github.com:guard-systems/appitizer.git
