@@ -8,7 +8,7 @@
     "build": "browserify index.js > www/index.js && cordova prepare",
     "dev": "budo index.js --live -d www/",
     "android": "npm run build && cordova run android",
-    "android-release": "npm run build && cordova build --release android && mv platforms/android/build/outputs/apk/android-release-unsigned.apk SpotApp.apk && jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore spotapp-release-key.keystore SpotApp.apk spotapp && ./zipalign -v 4 SpotApp.apk SpotApp.apk.aligned && cp SpotApp.apk.aligned SpotApp.apk"
+    "android-release": "npm run build && cordova build --release android && mv platforms/android/build/outputs/apk/android-release-unsigned.apk Appetizer.apk && jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore Appetizer.apk appetizer && ./zipalign -v 4 Apptizer.apk Appetizer.apk.aligned && cp Appetizer.apk.aligned Appetizer.apk"
   },
   "standard": {
     "ignore": [
