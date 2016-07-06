@@ -17,9 +17,15 @@ attachFastClick(document.body)
 m.route.mode = 'hash'
 
 var auth = require('./lib/auth')
+var assets = require('./models/assets')
+
+if (auth.user().id) {
+  assets.fetch()
+}
 
 m.route(document.getElementById('app'), (auth.user().id ? '/assets' : '/login'), {
   '/login': require('./routes/login'),
   '/assets': require('./routes/assets'),
+  '/assets/:assetId': require('./routes/asset'),
   '/disabled': require('./routes/disabled')
 })
