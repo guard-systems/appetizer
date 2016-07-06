@@ -11,7 +11,6 @@ assets.controller = function () {
 }
 
 assets.view = function (ctrl) {
-  console.log(assetsList(ctrl))
   return header({
     text: 'Assets',
     content: m('#content', [
