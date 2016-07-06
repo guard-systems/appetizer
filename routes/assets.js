@@ -1,11 +1,13 @@
 var m = require('mithril')
 var header = require('../lib/header')
+var request = require('../lib/request')
 
 var assets = {}
 
 assets.controller = function () {
+  var list = request({method: "GET", url: "/assets"})
   return {
-    list: function () { return [] },
+    list: list,
     select: function (id) { m.route('/assets/' + id) }
   }
 }
@@ -23,7 +25,7 @@ assets.view = function (ctrl) {
 
 function assetsList (ctrl) {
   return ctrl.list().map(function (asset) {
-    return m('li.assetlist', 'I am an asset to GSGroup!')
+    return m('li.assetlist', { 'data-id': asset.id, onclick: m.withAttr('data-id', ctrl.select) }, asset.name)
   })
 }
 

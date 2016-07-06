@@ -47,28 +47,21 @@ login.view = function (ctrl) {
   return m('#view', [
     m('#content.login', { style: '' }, [
       m('h1[style=text-align:center;]', 'Welcome to Appetizer'),
-      m('input[style=margin-bottom:20px]', {
-        placeholder: 'Customer ID',
-        type: 'number',
-        oninput: m.withAttr('value', function (value) { ctrl.user.customer = value }),
-        value: ctrl.user.customer
-      }),
-      m('input[style=margin-bottom:20px]', {
-        placeholder: 'Username',
-        oninput: m.withAttr('value', function (value) { ctrl.user.username = value }),
-        value: ctrl.user.username
-      }),
-      m('input[style=margin-bottom:20px]', {
-        placeholder: 'Password',
-        type: 'password',
-        onkeyup: ctrl.enter,
-        oninput: m.withAttr('value', function (value) { ctrl.user.password = value }),
-        value: ctrl.user.password
-      }),
+      createUserInput(ctrl, 'customer', { type: 'number' }),
+      createUserInput(ctrl, 'username'),
+      createUserInput(ctrl, 'password', { type: 'password', onkeyup: ctrl.enter }),
       m('button', { onclick: ctrl.login, style: 'margin-top: 40px' }, 'Login'),
       ctrl.issue() ? m('div', { style: 'margin-top:20px;color:red;text-align:center;' }, m('i.fa.fa-exclamation-triangle', ' ' + ctrl.issue())) : ''
     ])
   ])
+}
+
+function createUserInput (ctrl, prop, options) {
+  options = options || {}
+  options.placeholder = prop
+  options.value = ctrl.user[prop]
+  options.oninput = m.withAttr('value', function (value) { ctrl.user[prop] = value })
+  return m('input[style=margin-bottom:20px]', options)
 }
 
 module.exports = login
