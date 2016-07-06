@@ -1,13 +1,13 @@
 var m = require('mithril')
 var header = require('../lib/header')
 var request = require('../lib/request')
+var assetsModel = require('../models/assets')
 
 var assets = {}
 
 assets.controller = function () {
-  var list = request({method: "GET", url: "/assets"})
   return {
-    list: list,
+    list: assetsModel.list,
     select: function (id) { m.route('/assets/' + id) }
   }
 }

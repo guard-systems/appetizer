@@ -1,6 +1,6 @@
 var request = require('../lib/request')
 
-var _assets = []
+var _assets = window.asset = []
 var _assetsById = {}
 
 function fetch () {
@@ -12,8 +12,15 @@ function fetch () {
   })
 }
 
+function clear () {
+  console.log('clear')
+  _assets = []
+  _assetsById = {}
+}
+
 module.exports = {
   fetch: fetch,
-  get: function (id) { return _assetsById[id] },
-  list: function () { return _assets }
+  get: function (id) { return _assetsById[id] || false },
+  list: function () { return _assets },
+  clear: clear
 }
