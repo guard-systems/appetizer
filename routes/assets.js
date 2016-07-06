@@ -11,10 +11,11 @@ assets.controller = function () {
 }
 
 assets.view = function (ctrl) {
+  console.log(assetsList(ctrl))
   return header({
     text: 'Assets',
     content: m('#content', [
-      m('#scroller', m('ul', (ctrl.list().length > 0)
+      m('.scroller', m('ul', (ctrl.list().length > 0)
       ? assetsList(ctrl)
       : m('.minor-info', ' Nothing to show...'))
     )])
@@ -22,7 +23,7 @@ assets.view = function (ctrl) {
 }
 
 function assetsList (ctrl) {
-  ctrl.list().map(function (asset) {
+  return ctrl.list().map(function (asset) {
     return m('li.assetlist', 'I am an asset to GSGroup!')
   })
 }

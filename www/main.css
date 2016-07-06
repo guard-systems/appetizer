@@ -193,3 +193,17 @@ button:active {
 .scroller li.selected {
   background-color: #EFEFEF;
 }
+
+.minor-info {
+  margin-top:12px;
+  text-align:center;
+  color:grey;
+  font-size: 15px;
+}
+
+.assetlist {
+  display:block;
+  height: 48px;
+  vertical-align: middle;
+  min-width: 300px;
+}
